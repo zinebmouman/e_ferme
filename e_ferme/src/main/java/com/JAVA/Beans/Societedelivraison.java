@@ -13,8 +13,8 @@ public class Societedelivraison extends User {
     }
 
     // Constructeur avec paramètres (hérité de User)
-    public Societedelivraison(Long id, String nom, String email, String login, String password, String telephone, String zoneLivraison) {
-        super(id, nom, email, login, password, telephone);
+    public Societedelivraison(Long id, String nom, String email, String login, String password, String telephone,Long type, String zoneLivraison) {
+        super(id, nom, email, login, password, telephone, type);
         this.zoneLivraison = zoneLivraison;
     }
 

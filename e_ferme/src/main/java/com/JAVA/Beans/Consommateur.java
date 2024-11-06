@@ -13,8 +13,8 @@ public class Consommateur extends User {
     }
 
     // Constructeur avec paramètres (hérité de User)
-    public Consommateur(Long id, String nom, String email, String login, String password, String telephone, String address) {
-        super(id, nom, email, login, password, telephone);
+    public Consommateur(Long id, String nom, String email, String login, String password, String telephone, Long type, String address) {
+        super(id, nom, email, login, password, telephone, type);
         this.address = address;
     }
 

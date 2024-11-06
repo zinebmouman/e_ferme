@@ -27,7 +27,7 @@
         <div class="col-lg-6 col-md-8 col-sm-10">
           <div class="auth-form-box p-4 bg-white rounded shadow">
             <h2 class="text-center mb-4">Login</h2>
-            <form action="login" method="post">
+            <form action="${pageContext.request.contextPath}/login" method="post">
               <div class="form-group mb-3">
                 <label for="username">Username</label>
                 <input type="email" class="form-control" id="username" name="email" required>
