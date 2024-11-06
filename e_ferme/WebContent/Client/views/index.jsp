@@ -54,7 +54,7 @@
             <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         </div>
     </div>
-    <!-- End Slider -->
+    <!-- End Slider --> 
 
     <!-- Start Categories  -->
     <div class="categories-shop">
