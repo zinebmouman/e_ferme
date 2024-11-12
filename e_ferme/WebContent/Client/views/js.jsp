@@ -8,20 +8,20 @@
 </head>
 <body>
   <!-- ALL JS FILES -->
-    <script src="../js/jquery-3.2.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/jquery-3.2.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="../js/jquery.superslides.min.js"></script>
-    <script src="../js/bootstrap-select.js"></script>
-    <script src="../js/inewsticker.js"></script>
-    <script src="../js/bootsnav.js."></script>
-    <script src="../js/images-loded.min.js"></script>
-    <script src="../js/isotope.min.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/baguetteBox.min.js"></script>
-    <script src="../js/form-validator.min.js"></script>
-    <script src="../js/contact-form-script.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/jquery.superslides.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/bootstrap-select.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/inewsticker.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/bootsnav.js."></script>
+    <script src="${pageContext.request.contextPath}/Client/js/images-loded.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/isotope.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/baguetteBox.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/form-validator.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/contact-form-script.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/custom.js"></script>
 </body>
 </html>

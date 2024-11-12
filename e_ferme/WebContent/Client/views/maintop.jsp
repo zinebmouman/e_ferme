@@ -32,11 +32,12 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-   			<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="handleRedirect(this)">
-        		 <option disabled selected>Mon Compte</option>
-        		 <option value="Inscrire.jsp">S'inscrire</option>
-       			 <option value="Login.jsp">Se Connecter</option>
-    		</select>
+					<p><a class="btn hvr-hover" href="${pageContext.request.contextPath}/Client/views/Inscrire.jsp">S'inscrire</a></p>
+					</div>
+					
+					<div class="login-box">
+					<p><a class="btn hvr-hover" href="${pageContext.request.contextPath}/Client/views/Login.jsp">Se Connecter</a></p>
+   			
 		</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">

@@ -1,34 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un Consommateur</title>
+    <!-- Fonts and styles -->
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/Client/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/Client/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Client/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Client/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Client/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Client/css/custom.css">
 </head>
+
 <body>
-    <h1>Formulaire d'ajout d'un consommateur</h1>
+    <!-- Start Registration Form -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>Formulaire d'ajout d'un consommateur</h2>
+                        <form action="${pageContext.request.contextPath}/ajouterConsommateur" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Nom" name="Nom" placeholder="Nom" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="login" name="login" placeholder="Login" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Téléphone" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="address" name="address" placeholder="Adresse" rows="3" required></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="submit-button text-center">
+                                <button type="submit" class="btn hvr-hover">Ajouter</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Registration Form -->
 
-    <form action="${pageContext.request.contextPath}/ajouterConsommateur" method="POST">
-        <label for="Nom">Nom:</label>
-        <input type="text" id="Nom" name="Nom" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="login">Login:</label>
-        <input type="text" id="login" name="login" required><br><br>
-
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <label for="telephone">Téléphone:</label>
-        <input type="text" id="telephone" name="telephone" required><br><br>
-
-        <label for="address">Adresse:</label>
-        <textarea id="address" name="address" required></textarea><br><br>
-
-        <button type="submit">Ajouter</button>
-    </form>
-
+    <!-- Core JS Files -->
+    <script src="${pageContext.request.contextPath}/Client/js/jquery-3.2.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="${pageContext.request.contextPath}/Client/js/jquery.superslides.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/bootstrap-select.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/inewsticker.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/bootsnav.js."></script>
+    <script src="${pageContext.request.contextPath}/Client/js/images-loded.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/isotope.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/baguetteBox.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/form-validator.min.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/contact-form-script.js"></script>
+    <script src="${pageContext.request.contextPath}/Client/js/custom.js"></script>
 </body>
+
 </html>

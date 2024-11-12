@@ -7,6 +7,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.JAVA.DAO.ProduitDAO;
+import com.JAVA.DAO.ProduitDAOImp;
+
 
 
 public class DAOFactory {
@@ -87,4 +90,8 @@ public class DAOFactory {
             e.printStackTrace();
         }
     }
+
+	public ProduitDAOImp getProduitDao() {
+		return new ProduitDAOImp(this);
+	}
 }

@@ -18,7 +18,7 @@ public class LogoutServlet extends HttpServlet {
         if (session != null) {
             session.invalidate(); // Invalide la session pour déconnecter l'utilisateur
         }
-        response.sendRedirect("Client/views/index.jsp"); // Redirige vers la page de connexion
+        response.sendRedirect("/e_ferme/ListerProduits?page=index"); // Redirige vers la page de connexion
     }
 }
  

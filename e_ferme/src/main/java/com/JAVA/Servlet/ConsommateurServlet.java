@@ -44,7 +44,7 @@ public class ConsommateurServlet extends HttpServlet {
 
         try {
             consommateurDAO.ajouterConsommateur(consommateur);
-            response.sendRedirect("Client/views/homme.jsp?user_id=" + consommateur.getId()); // Page de succès avec redirection incluant l'ID de l'utilisateur
+            response.sendRedirect(request.getContextPath() + "/ListerProduits?page=home&user_id=" + consommateur.getId()); // Page de succès avec redirection incluant l'ID de l'utilisateur
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("error.jsp"); // Page d'erreur si l'ajout échoue

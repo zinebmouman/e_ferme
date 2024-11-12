@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,37 +15,34 @@
 <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-center">
-                <img src="../images/banner-01.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/Client/images/banner-01.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p class="m-b-40">where every bite supports a healthier you and a stronger community!</p>
                         </div>
                     </div>
                 </div>
             </li>
             <li class="text-center">
-                <img src="../images/banner-02.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/Client/images/banner-02.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p class="m-b-40">where every bite supports a healthier you and a stronger community!</p>
                         </div>
                     </div>
                 </div>
             </li>
             <li class="text-center">
-                <img src="../images/banner-03.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/Client/images/banner-03.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop Newngng</a></p>
+                            <p class="m-b-40">where every bite supports a healthier you and a stronger community!</p>
                         </div>
                     </div>
                 </div>
@@ -56,7 +55,53 @@
     </div>
     <!-- End Slider --> 
 
-    <!-- Start Categories  -->
+    <!-- Start Promotion  -->
+
+
+<div id="promotions-section" class="categories-shop">
+        <div class="container">
+        <div class="title-all text-center">
+                        <h1>Promotions</h1>
+                        <p>Don't miss our exclusive offers and take advantage of exceptional promotions starting today!</p>
+                    </div>
+<div id="produitsSlider" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <c:forEach var="produit" items="${produitsAvecPromotion}" varStatus="status">
+            <c:if test="${status.index % 3 == 0}">
+                <div class="carousel-item ${status.index == 0 ? 'active' : ''}">
+                    <div class="row">
+            </c:if>
+            
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid  img-equal-size" src="${produit.image}" alt="Image du produit" />
+                    <a class="btn hvr-hover" href="#">${produit.nom}<br>${produit.promotion.taux}% de réduction</a>
+                  <!--   <div class="card-body">
+                        <h5 class="card-title">${produit.nom}</h5>
+                        <p class="card-text">Prix: ${produit.prix} MAD</p>
+                        <p class="card-text">Quantité: ${produit.quantite}</p>
+                        <p class="card-text">${produit.description}</p>
+                        <div class="alert alert-success mt-3">
+                            <p><strong>Promotion:</strong> ${produit.promotion.taux}% de réduction</p>
+                            <p>Période: ${produit.promotion.dateDebut} - ${produit.promotion.dateFin}</p>
+                            <p>Description: ${produit.promotion.description}</p>
+                        </div>
+                    </div>--> 
+                </div>
+            </div>
+            
+            <c:if test="${status.index % 3 == 2 || status.index == produitsAvecPromotion.size() - 1}">
+                    </div>
+                </div>
+            </c:if>
+        </c:forEach>
+    </div>
+</div>
+</div>
+</div>
+
+                
+    <!-- End Promotion   
     <div class="categories-shop">
         <div class="container">
             <div class="row">
@@ -65,159 +110,150 @@
                         <img class="img-fluid" src="../images/categories_img_01.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="../images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Categories -->
-	
-	<div class="box-add-products">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="../images/add-img-01.jpg" alt="" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="../images/add-img-02.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                </div> -->
+   <!-- Start Offre  -->             
+<div id="offres-section" class="box-add-products">
+    <div class="container">
+        <div id="produitsSlider" class="carousel slide" data-ride="carousel" >
+            <div class="carousel-inner ">
+                <c:forEach var="produit" items="${produitsAvecOffre}" varStatus="status">
+                    <c:if test="${status.index % 2 == 0}">
+                        <div class="carousel-item ${status.index == 0 ? 'active' : ''}">
+                            <div class="row">
+                    </c:if>
 
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="offer-card">
+                            <div class="btn hvr-hover">${produit.offre.tauxReduction}% de réduction</div>
+                            <img class="product-image img-equal-size2" src="${produit.image}" alt="Image du produit" />
+                            <div class="blog-content">
+                            <div class="title-blog">
+                            
+                                <h3 >${produit.prix} MAD</h3>
+                                <h2 >${produit.nom}</h2>
+                                <h5 >${produit.description}</h5>
+                                <h4 >Période : ${produit.offre.dateDebut} - ${produit.offre.dateFin}</h4>
+                                <p class="mt-2">
+                                    <button class="btn hvr-hover">Voir l'offre</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+</div>
+                    <c:if test="${status.index % 2 == 1 || status.index == produitsAvecOffre.size() - 1}">
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+            </div>
+  </div>
+</div>
+</div>          
+     <!-- End offre  -->       
     <!-- Start Products  -->
-    <div class="products-box">
+    <div id="products-section" class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Fruits & Vegetables</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <h1>Our Products</h1>
+                        <p>Experience the freshness of locally grown produce and support sustainable farming – Taste the difference in every bite!</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="col-lg-12">
+        <div class="special-menu text-center">
+            <div class="button-group filter-button-group">
+                <!-- Bouton All pour afficher tous les produits -->
+                
+                
+                <!-- Boutons pour chaque catégorie -->
+                <form method="get" action="ListerProduits#products-section" id="categoryForm">
+    <button class="active" type="submit" name="idc" value="0" data-page="index">All</button> <!-- All products button -->
+    <c:forEach var="categorie" items="${categories}">
+        <!-- Submit button for each category -->
+        <button class="btn hvr-hover" type="submit" name="idc" value="${categorie.idCategorie}" class="btn" data-toggle="tooltip" title="${categorie.nom}" data-page="index">
+            ${categorie.nom}
+        </button>
+    </c:forEach>
+</form>
 
-            <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="../images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $7.79</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="../images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $9.79</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="../images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $10.79</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="../images/img-pro-04.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $15.79</h5>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+</div>
+
+
+            <div class="row special-list">
+    <c:forEach var="produit" items="${produits}">
+        <div class="col-lg-3 col-md-6 special-grid best-seller">
+            <div class="products-single fix">
+                <div class="box-img-hover">
+                    <div class="type-lb">
+                        <!-- Optionally, you can add a condition for sale, new, etc. -->
+                        <p class="sale">Sale</p>
+                    </div>
+                    <!-- Display the image dynamically -->
+                    <img src="${produit.image}" class="img-fluid" alt="Image du produit">
+                    <div class="mask-icon">
+                        <ul>
+                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                        </ul>
+                        <a class="cart" href="#">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="why-text">
+                    <!-- Display the product name and price dynamically -->
+                    <h4>${produit.nom}</h4>
+                    <h5>${produit.prix} MAD</h5>
+                </div>
+            </div>
+        </div>
+    </c:forEach>
+</div>
+
+
+               <div class="row special-list">
+    <c:if test="${not empty produitsParCategorie}">
+        <c:forEach var="produit" items="${produitsParCategorie}">
+            <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <!-- Vous pouvez ajouter une condition si le produit est en promotion -->
+                        <div class="type-lb">
+                            <p class="sale">Sale</p>
+                        </div>
+                        <!-- Affichage dynamique de l'image du produit -->
+                        <img src="${produit.image}" class="img-fluid" alt="${produit.nom}">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                            </ul>
+                            <a class="cart" href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <!-- Affichage dynamique du nom et prix du produit -->
+                        <h4>${produit.nom}</h4>
+                        <h5>${produit.prix} MAD</h5>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </c:if>
+
+    <c:if test="${empty produitsParCategorie}">
+        <p></p>
+    </c:if>
+</div>
+ </div>
+    </div>
+</div>
     <!-- End Products  -->
 
     <!-- Start Blog  -->
@@ -235,12 +271,12 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img.jpg" alt="" />
+                            <img class="img-fluid" src="${pageContext.request.contextPath}/Client/images/blog-img.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                <h3>What's in Season? Fall Fruits & Vegetables</h3>
+                                <p>This blog highlights the best seasonal fruits and vegetables in autumn, such as apples, cranberries, kale, and eggplant. It also provides useful tips on how to store them and delicious recipe ideas. Check it out for a comprehensive guide to fall produce.</p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -253,12 +289,12 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img-01.jpg" alt="" />
+                            <img class="img-fluid" src="${pageContext.request.contextPath}/Client/images/blog-img-01.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                <h3>Seasonal Fall Fruits and Vegetables: 10 Healthiest Choices</h3>
+                                <p>A great resource for finding healthy autumn produce. The blog discusses the benefits of foods like kale, acorn squash, and figs, offering insights into their health advantages and tips for incorporating them into meals.</p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -271,12 +307,12 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="../images/blog-img-02.jpg" alt="" />
+                            <img class="img-fluid" src="${pageContext.request.contextPath}/Client/images/blog-img-02.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                                <h3>What’s in Season in Fall: Healthy Produce to Eat</h3>
+                                <p>This blog goes beyond the basics, providing a variety of fall fruits and vegetables with information on storage and creative ways to prepare them. Featured produce includes everything from pears and pomegranates to Brussels sprouts and broccoli.</p>
                             </div>
                             <ul class="option-blog">
                                 <li><a href="#"><i class="far fa-heart"></i></a></li>
@@ -297,7 +333,7 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-01.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-01.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -305,7 +341,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-02.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-02.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -313,7 +349,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-03.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-03.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -321,7 +357,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-04.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-04.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -329,7 +365,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-05.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -337,7 +373,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-06.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-06.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -345,7 +381,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-07.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-07.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -353,7 +389,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-08.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-08.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -361,7 +397,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-09.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-09.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -369,7 +405,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="../images/instagram-img-05.jpg" alt="" />
+                    <img src="${pageContext.request.contextPath}/Client/images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -388,5 +424,48 @@
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
     <jsp:include page="js.jsp" />
+    
+    <style>
+    
+    .img-equal-size {
+    width: 100%;          /* Utilise 100% de la largeur disponible */
+    height: 350px;        /* Fixe la hauteur à 200px, ajustez la valeur selon votre besoin */
+    object-fit: cover;    /* Garantit que l'image couvre toute la zone sans déformation */
+}
+
+.img-equal-size2 {
+    width: 500px;          /* Utilise 100% de la largeur disponible */
+    height: 300px;        /* Fixe la hauteur à 200px, ajustez la valeur selon votre besoin */
+    object-fit: cover;    /* Garantit que l'image couvre toute la zone sans déformation */
+}
+
+   
+    
+    </style>
+    <script>
+    $(document).ready(function(){
+        $('#produitsSlider').carousel({
+            interval: 3000 // Défilement toutes les 2 secondes
+        });
+    });
+    
+const buttons = document.querySelectorAll('button[type="submit"]');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create a hidden input for 'page' dynamically
+            const pageInput = document.createElement('input');
+            pageInput.type = 'hidden';
+            pageInput.name = 'page';
+            pageInput.value = button.getAttribute('data-page');
+            
+            // Append the hidden input to the form before submitting
+            document.getElementById('categoryForm').appendChild(pageInput);
+        });
+    });
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -25,9 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="#slides-shop">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#promotions-section">Promotions</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#offres-section">Offers</a></li>
-                        <li class="nav-item"><a href="#products-section" class="nav-link" >Products</a>
+                        <li class="nav-item"><a class="nav-link" href="#promotions-shop">Promotions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#offres-shop">Offers</a></li>
+                        <li class="dropdown">
+                            <a href="#products-shop" class="nav-link" >Products</a>
                         </li>
                         
                         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>

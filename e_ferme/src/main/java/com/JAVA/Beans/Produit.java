@@ -1,16 +1,23 @@
 package com.JAVA.Beans;
 
+import java.util.Date;
+
 /**
  * Produit.java
  * Cette classe modèle représente une entité Produit.
  */
 public class Produit {
-    protected Long idProduit;     // Identifiant du produit
-    protected String nom;         // Nom du produit
-    protected String description; // Description du produit
-    protected Double prix;        // Prix du produit
-    protected Long idCategorie;   // Identifiant de la catégorie
-    protected Long idPromotion;   // Identifiant de la promotion
+    protected Long idProduit;       // Identifiant du produit
+    protected String nom;           // Nom du produit
+    protected Double prix;          // Prix du produit
+    protected int quantite;         // Quantité du produit
+    protected String description;   // Description du produit
+    protected String image;         // Chemin de l'image du produit
+    protected Date dateRecolte;     // Date de récolte du produit
+    protected Long userId;          // Identifiant de l'utilisateur (au lieu de fermier_id)
+    private Promotion promotion;   // Objet promotion
+    private Offre offre;           // Objet offre
+    private Categorie categorie;
 
     // Constructeur par défaut
     public Produit() {
@@ -18,24 +25,30 @@ public class Produit {
     }
 
     // Constructeur avec paramètres (sans identifiant)
-    public Produit(String nom, String description, Double prix, Long idCategorie, Long idPromotion) {
+    public Produit(String nom, Double prix, int quantite, String description, String image, Date dateRecolte, Long userId, Categorie categorie) {
         super();
         this.nom = nom;
-        this.description = description;
         this.prix = prix;
-        this.idCategorie = idCategorie;
-        this.idPromotion = idPromotion;
+        this.quantite = quantite;
+        this.description = description;
+        this.image = image;
+        this.dateRecolte = dateRecolte;
+        this.userId = userId;
+        this.categorie = categorie;
     }
 
     // Constructeur avec tous les paramètres
-    public Produit(Long idProduit, String nom, String description, Double prix, Long idCategorie, Long idPromotion) {
+    public Produit(Long idProduit, String nom, Double prix, int quantite, String description, String image, Date dateRecolte, Long userId, Categorie categorie) {
         super();
         this.idProduit = idProduit;
         this.nom = nom;
-        this.description = description;
         this.prix = prix;
-        this.idCategorie = idCategorie;
-        this.idPromotion = idPromotion;
+        this.quantite = quantite;
+        this.description = description;
+        this.image = image;
+        this.dateRecolte = dateRecolte;
+        this.userId = userId;
+        this.categorie = categorie;
     }
 
     // Getters et Setters
@@ -55,14 +68,6 @@ public class Produit {
         this.nom = nom;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Double getPrix() {
         return prix;
     }
@@ -71,26 +76,78 @@ public class Produit {
         this.prix = prix;
     }
 
-    public Long getIdCategorie() {
-        return idCategorie;
+    public int getQuantite() {
+        return quantite;
     }
 
-    public void setIdCategorie(Long idCategorie) {
-        this.idCategorie = idCategorie;
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
     }
 
-    public Long getIdPromotion() {
-        return idPromotion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setIdPromotion(Long idPromotion) {
-        this.idPromotion = idPromotion;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Date getDateRecolte() {
+        return dateRecolte;
+    }
+
+    public void setDateRecolte(Date dateRecolte) {
+        this.dateRecolte = dateRecolte;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     // Méthode toString pour afficher les informations du produit
     @Override
     public String toString() {
-        return "Produit [idProduit=" + idProduit + ", nom=" + nom + ", description=" + description + ", prix=" + prix
-                + ", idCategorie=" + idCategorie + ", idPromotion=" + idPromotion + "]";
+        return "Produit [idProduit=" + idProduit + ", nom=" + nom + ", prix=" + prix + ", quantite=" + quantite
+                + ", description=" + description + ", image=" + image + ", dateRecolte=" + dateRecolte
+                + ", userId=" + userId + ", categorie=" + (categorie != null ? categorie.getNom() : "Non définie") + "]";
+    }
+
+    // Getters et setters pour promotion et offre
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public void setPromotion(Promotion promotion) {
+        this.promotion = promotion;
+    }
+
+    public Offre getOffre() {
+        return offre;
+    }
+
+    public void setOffre(Offre offre) {
+        this.offre = offre;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    // Méthode setIdCategorie ajoutée ici
+    public void setIdCategorie(int categorieId) {
+        this.categorie = new Categorie(); // Assurez-vous que la classe Categorie a un constructeur par défaut
+        this.categorie.setIdCategorie((long) categorieId); // Assurez-vous que la classe Categorie a une méthode setId
     }
 }
