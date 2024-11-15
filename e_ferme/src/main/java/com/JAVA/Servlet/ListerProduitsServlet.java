@@ -51,6 +51,7 @@ public class ListerProduitsServlet extends HttpServlet {
             // Passer les autres données à la vue
             request.setAttribute("produitsAvecPromotion", produitsAvecPromotion);
             request.setAttribute("produitsAvecOffre", produitsAvecOffre);
+            System.out.println("Produits récupérés : " + produits);  // Ajoutez cette ligne pour vérifier
 
             // Vérifier le paramètre 'page' pour savoir quelle vue afficher
             String page = request.getParameter("page");

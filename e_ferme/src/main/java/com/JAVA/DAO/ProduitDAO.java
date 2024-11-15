@@ -11,4 +11,5 @@ public interface ProduitDAO {
     List<Produit> getProduitsAvecOffre() throws SQLException;
     List<Categorie> getAllCategories() throws SQLException;
     List<Produit> getProduitsParCategorie(long idCategorie) throws SQLException;
+    Produit getProduitByID(long idProduit) throws SQLException;
 }

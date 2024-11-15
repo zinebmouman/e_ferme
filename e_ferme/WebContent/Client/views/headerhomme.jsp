@@ -30,7 +30,7 @@
                         <li class="dropdown">
                             <a href="#products-shop" class="nav-link" >Products</a>
                         </li>
-                        
+                        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/PanierServlet?user_id=${param.user_id}">My cart</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>

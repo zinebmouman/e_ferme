@@ -155,6 +155,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
+                    <c:if test="${not empty successMessage}">
+    <div class="alert alert-success">
+        ${successMessage}
+    </div>
+</c:if>
+                    
                         <h1>Our Products</h1>
                         <p>Experience the freshness of locally grown produce and support sustainable farming – Taste the difference in every bite!</p>
                     </div>
@@ -169,6 +175,7 @@
                 
                 <!-- Boutons pour chaque catégorie -->
                 <form method="get" action="ListerProduits#products-section" id="categoryForm">
+                <input type="hidden" name="user_id" value="${param.user_id}" />
     <button class="active" type="submit" name="idc" value="0" data-page="home">All</button> <!-- All products button -->
     <c:forEach var="categorie" items="${categories}">
         <!-- Submit button for each category -->
@@ -201,7 +208,14 @@
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                         </ul>
-                        <a class="cart" href="#">Add to Cart</a>
+                        <form action="${pageContext.request.contextPath}/PanierServlet" method="post">
+    <input type="hidden" name="user_id" value="${param.user_id}">
+    <input type="hidden" name="idc" value="${param.idc}">
+    <input type="hidden" name="produit_id" value="${produit.idProduit}">
+    <button type="submit" class="cart">Add to Cart</button>
+</form>
+
+
                     </div>
                 </div>
                 <div class="why-text">
@@ -233,7 +247,14 @@
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                             </ul>
-                            <a class="cart" href="#">Add to Cart</a>
+                            <form action="${pageContext.request.contextPath}/PanierServlet" method="post">
+    <input type="hidden" name="user_id" value="${param.user_id}">
+        <input type="hidden" name="idc" value="${param.idc}">
+    <input type="hidden" name="produit_id" value="${produit.idProduit}">
+    <button type="submit" class="cart">Add to Cart</button>
+</form>
+
+
                         </div>
                     </div>
                     <div class="why-text">

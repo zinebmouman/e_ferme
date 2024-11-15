@@ -166,6 +166,32 @@ public class ProduitDAOImp {
         return produits;
     }
 
+    
+    public Produit getProduitByID(long idProduit) throws SQLException {
+        Produit produit = null;
+        String query = "SELECT * FROM produit WHERE id = ?";
+
+        try (Connection connection = daoFactory.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setLong(1, idProduit);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    produit = new Produit();
+                    produit.setIdProduit(resultSet.getLong("id"));
+                    produit.setNom(resultSet.getString("nom"));
+                    produit.setPrix(resultSet.getDouble("prix"));
+                    produit.setQuantite(resultSet.getInt("quantite"));
+                    produit.setDescription(resultSet.getString("descreption"));
+                    produit.setImage(resultSet.getString("image"));
+                    produit.setDateRecolte(resultSet.getDate("date_recolte"));
+                    produit.setUserId(resultSet.getLong("user_id"));
+                }
+            }
+        }
+        return produit;
+    }
+
 
     
 }
